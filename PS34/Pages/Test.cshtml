@@ -1,0 +1,24 @@
+﻿@page
+@model PS34.Pages.TestModel
+
+<head>
+    <title>Wprowadzone Dane</title>
+</head>
+
+<body>
+    <h3>Wprowadziłeś następujące dane:</h3>
+    <label class="font-weight-bold" asp-for="person.firstName"></label>: @Model.person.firstName <br />
+    <label class="font-weight-bold" asp-for="person.email"></label>: @Model.person.email<br />
+    <label class="font-weight-bold" asp-for="person.age"></label>: @Model.person.age <br />
+    <label class="font-weight-bold" asp-for="person.height"></label>: @Model.person.height m <br />
+    <label class="font-weight-bold" asp-for="person.weight"></label>: @Model.person.weight kg <br />
+    <label class="font-weight-bold" asp-for="person.gender"></label>: @Model.person.gender <br />
+    @if (Model.BMI < 18.5 || Model.BMI > 24.99)
+    {
+        <span class="text-danger font-weight-bolder">Twoje BMI wynosi @Model.BMI</span>
+    }
+    else
+    {
+        <span class="text-success font-weight-bolder">Twoje BMI wynosi @Model.BMI</span>
+    }
+</body>

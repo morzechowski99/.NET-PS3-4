@@ -1,0 +1,55 @@
+﻿@page
+@model IndexModel
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator BMI</title>
+
+</head>
+<body>
+    <div class="container">
+    <h3>Oblicz swoje BMI!</h3>
+    <form  method="post">
+        <label class="font-weight-bold" asp-for="person.firstName"></label>
+        <input asp-for="person.firstName" />
+        <span asp-validation-for="person.firstName" class="text-danger"></span><br /><br />
+        <label class="font-weight-bold" asp-for="person.email"></label>
+        <input asp-for="person.email" />
+        <span asp-validation-for="person.email" class="text-danger"></span><br /><br />
+        <label class="font-weight-bold" asp-for="person.age"></label>
+        <input asp-for="person.age" />
+        <span asp-validation-for="person.age" class="text-danger"></span><br /><br />
+        <label class="font-weight-bold" asp-for="person.weight"></label>
+        <input asp-for="person.weight" />
+        <span asp-validation-for="person.weight" class="text-danger"></span><br /><br />
+        <label class="font-weight-bold" asp-for="person.height"></label>
+        <input asp-for="person.height" />
+        <span asp-validation-for="person.height" class="text-danger"></span><br /><br />
+
+
+        <span class="font-weight-bold">Jednostka</span>:
+
+        <select id="cm" name="cm">
+
+            <option value="true">cm</option>
+            <option value="false" selected>m</option>
+
+
+        </select><br /><br />
+        <label class="font-weight-bold" asp-for="person.gender"></label>
+        <select asp-for="person.gender">
+            <option value="kobieta">kobieta</option>
+            <option value="mężczyżna">mężczyzna</option>
+        </select><br /><br />
+        <button type="submit">OBLICZ BMI</button>
+    </form>
+    <br />
+    </div>
+
+
+</body>
+</html>
